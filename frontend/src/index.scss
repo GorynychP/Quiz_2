@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.button-test {
+		font-size: 16px;
+		font-weight: 500;
+		padding: 10px 20px;
+		margin: 0 20px;
+		background-color: #157347;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		border: 1px solid transparent;
+		cursor: pointer;
+		text-align: center;
+		transition: border-color 0.25s;
+	}
+	.textarea-question {
+		width: 500px;
+		padding: 5px 10px;
+		height: 90px;
+		border-radius: 10px;
+		border: 1px solid #fff;
+		resize: none;
+	}
+	.textarea-answer {
+		width: 270px;
+		padding: 5px 10px;
+		height: 60px;
+		border-radius: 10px;
+		border: 1px solid #fff;
+		resize: none;
+	}
+	.test-history {
+		border: 1px solid #ddd;
+		border-radius: 14px;
+		margin-bottom: 10px;
+		// margin: 0 auto;
+		margin-bottom: 24px;
+		padding: 10px;
+		width: 1000px;
+		height: 100px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.progress-bar {
+			background-color: #ddd;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			border-radius: 5px;
+			p {
+				margin: 0 auto;
+				font-size: 18px;
+				padding: 0 10px;
+				color: white;
+			}
+		}
+	}
+
+	.test-container {
+		// max-width: 600px;
+		width: 600px;
+		height: auto;
+		margin: 0 auto;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		background-color: #ffffff27;
+	}
+
+	.navigation-buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 40px;
+	}
+
+	.test-result {
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 20px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		text-align: center;
+	}
+
+	/* src/App.css */
+	.edit-test-container {
+		display: flex;
+		max-width: 540px;
+		max-height: 707px;
+		min-height: 707px;
+		margin: 0 auto;
+		margin-bottom: 150px;
+		padding: 20px;
+		border: 1px solid #ddd;
+		background-color: #ffffff27;
+		border-radius: 5px;
+	}
+	.edit-container {
+		display: flex;
+		max-width: 1100px;
+		max-height: 707px;
+		min-height: 707px;
+		margin: 0 auto;
+		margin-bottom: 150px;
+		padding: 20px;
+		border: 1px solid #ddd;
+		background-color: #ffffff27;
+		border-radius: 5px;
+	}
+
+	.question-container {
+		width: 600px;
+		border-right: 1px solid #ddd;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.question-list {
+			width: 500px;
+			max-height: 600px;
+			overflow: auto;
+			padding-right: 20px;
+		}
+	}
+
+	.question-item {
+		padding: 10px;
+		cursor: pointer;
+		border-bottom: 1px solid #eee;
+		transition: background-color 0.3s;
+	}
+
+	.question-item:hover {
+		background-color: #20383b;
+	}
+
+	.question-item.selected {
+		background-color: #20383b;
+	}
+
+	.new-option {
+		margin-top: 10px;
+	}
+
+	/* Add more styles as needed */
+}
+
+* {
+	box-sizing: border-box;
+	color: rgba(255, 255, 255, 0.87);
+}
+
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+}
+a:hover {
+	color: #535bf2;
+}
+
+body {
+	margin: 0 auto;
+	background-color: #242424;
+}
+
+// h1 {
+// 	font-size: 3.2em;
+// 	line-height: 1.1;
+// }
+
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
+}
+.checkbox {
+	display: none;
+}
+.checkbox:checked + .answer::before {
+	opacity: 1;
+}
+.answer {
+	display: inline-block;
+	margin: 0px 10px;
+	width: 18px;
+	height: 17px;
+	border: 1px solid black;
+	position: relative;
+	background-color: #eee;
+}
+
+.answer::before {
+	content: '✅';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-47%, -52%);
+	display: block;
+	opacity: 0;
+	transition: 0.2s;
+}
+
+$h1-size: 2.5rem;
+$h2-size: 2rem;
+$h3-size: 1.75rem;
+$h4-size: 1.5rem;
+$h5-size: 1.25rem;
+$h6-size: 1rem;
+
+// Пример использования
+h1 {
+	font-size: $h1-size;
+	color: #fff;
+}
+
+h2 {
+	font-size: $h2-size;
+	color: #fff;
+}
+
+h3 {
+	font-size: $h3-size;
+	color: #fff;
+}
+
+h4 {
+	font-size: $h4-size;
+	color: #fff;
+}
+
+h5 {
+	font-size: $h5-size;
+}
+
+h6 {
+	font-size: $h6-size;
+}
